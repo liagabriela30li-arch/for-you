@@ -52,33 +52,31 @@ if st.button("CREAR MI CORAZÓN ♡", type="primary"):
         with st.spinner("ESCRIBIENDO..."):
             time.sleep(1) # Pequeña pausa emotiva
             
-            # Generación de la matriz del corazón usando tu lógica matemática
+            # Generación de la matriz del corazón con letras continuas
             corazon_lineas = []
             y = 1.25
+            contador_letras = 0
             while y >= -1.25:
                 x = -1.45
                 linea_actual = ""
                 while x <= 1.45:
                     forma = (x*x + y*y - 1)**3 - x*x*y**3
                     if forma <= 0:
-                        # Selecciona la letra del nombre de forma cíclica
-                        letra = texto[len(corazon_lineas) % len(texto)]
+                        # Toma la letra de forma continua por todo el corazón
+                        letra = texto[contador_letras % len(texto)]
                         linea_actual += letra + " "
+                        contador_letras += 1
                     else:
                         linea_actual += "  "
                     x += 0.085
                 corazon_lineas.append(linea_actual)
                 y -= 0.105
 
-            # Mostrar el resultado en pantalla
+            # Mostrar el resultado en pantalla limpio
             resultado_final = "\n".join(corazon_lineas)
             st.code(resultado_final, language=None)
-    
-""", unsafe_allow_html=True)
             
             st.balloons() # ¡Efecto de globos en la web!
             
             st.markdown(f"<h2 style='text-align: center; color: #FF7895; font-family: Georgia, serif;'>I love you {texto.title()} &lt;3</h2>", unsafe_allow_html=True)
             st.markdown("<p style='text-align: center; color: #886775; font-size: 11px;'>Un intento de hacerte el trend... ♡</p>", unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)

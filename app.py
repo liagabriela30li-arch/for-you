@@ -73,9 +73,12 @@ if st.button("CREAR MI CORAZÓN ♡", type="primary"):
                 y -= 0.105
 
             # Mostrar el resultado en pantalla limpio
-            resultado_final = "\n".join(corazon_lineas)
-            st.code(resultado_final, language=None)
-            
+           # Mostrar el resultado en pantalla de color rojo y alineado
+            st.markdown(f"""
+                <div style="text-align: center;">
+                    <div style="display: inline-block; text-align: left; font-family: monospace; font-size: 11px; line-height: 1.1; color: #FF315A; white-space: pre;">{resultado_final}</div>
+                </div>
+            """, unsafe_allow_html=True)
             st.balloons() # ¡Efecto de globos en la web!
             
             st.markdown(f"<h2 style='text-align: center; color: #FF7895; font-family: Georgia, serif;'>I love you {texto.title()} &lt;3</h2>", unsafe_allow_html=True)

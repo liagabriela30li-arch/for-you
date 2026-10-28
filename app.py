@@ -80,3 +80,6 @@ if st.button("CREAR MI CORAZÓN ♡", type="primary"):
             
             st.markdown(f"<h2 style='text-align: center; color: #FF7895; font-family: Georgia, serif;'>I love you {texto.title()} &lt;3</h2>", unsafe_allow_html=True)
             st.markdown("<p style='text-align: center; color: #886775; font-size: 11px;'>Un intento de hacerte el trend... ♡</p>", unsafe_allow_html=True)
+
+# Cierre correcto del panel principal
+st.markdown('</div>', unsafe_allow_html=True)

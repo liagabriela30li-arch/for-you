@@ -72,7 +72,11 @@ if st.button("CREAR MI CORAZÓN ♡", type="primary"):
 
             # Mostrar el resultado en pantalla
             resultado_final = "\n".join(corazon_lineas)
-            st.code(resultado_final, language=None)
+            st.markdown(f"""
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <pre style="font-family: monospace; font-size: 10px; line-height: 1.1; color: #FFF0F4; text-align: left; margin: 0 auto;">{resultado_final}</pre>
+    </div>
+""", unsafe_allow_html=True)
             
             st.balloons() # ¡Efecto de globos en la web!
             
